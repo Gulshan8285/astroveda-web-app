@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroVeda | दिव्य ज्योतिष - Vedic Astrology, Kundli & Astrologer Chat</title>
+  <meta name="description" content="India's most trusted Vedic astrology platform. Get instant Janam Kundli analysis, horoscope predictions, and live consultation at just ₹1 trial offer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Twinkling Starfield Animated Canvas Background -->
+  <canvas id="starfieldCanvas"></canvas>
+
+  <div id="app">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="trust-ribbon" id="trustRibbon">
+        <span>⚡ 500,000+ Consultations • 4.9★ Rated • 100% Confidential • Kashi Vedic Certified</span>
+      </div>
+
+      <div class="header-inner">
+        <!-- Logo -->
+        <div class="brand-logo-wrap" id="logoBrand">
+          <div class="logo-sacred-emblem">
+            <span>ॐ</span>
+          </div>
+          <div class="brand-text">
+            <h1 id="brandTitle">AstroVeda</h1>
+            <span id="brandSub">दिव्य वैदिक ज्योतिष</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <nav>
+          <ul class="nav-links">
+            <li><a class="nav-link active" data-nav="landing" id="navHome">Home</a></li>
+            <li><a class="nav-link" data-nav="kundli" id="navKundli">Free Kundli</a></li>
+            <li><a class="nav-link" data-nav="matching" id="navMatching">Kundli Milan</a></li>
+            <li><a class="nav-link" data-nav="panchang" id="navPanchang">Panchang</a></li>
+            <li><a class="nav-link" data-nav="astrologers" id="navAstrologers">Verified Gurus</a></li>
+            <li><a class="nav-link" data-nav="horoscope" id="navHoroscope">Daily Horoscope</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="header-right-actions">
+          <!-- Global Language Switcher -->
+          <button class="global-lang-btn" id="btnToggleLang" title="Change Language / भाषा बदलें">
+            <span id="langFlag">🇮🇳</span>
+            <span id="langLabel">हिंदी / EN</span>
+          </button>
+
+          <!-- Auth Status / Trigger Button -->
+          <div id="authHeaderArea">
+            <button class="btn-outline-gold" id="btnHeaderLogin">
+              <span>Sign In</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN VIEWS CONTAINER -->
+    <main id="mainContent">
+
+      <!-- ==============================================================
+           VIEW 1: LANDING PAGE (Trust, Discovery & Direct Google Login)
+           ============================================================== -->
+      <section id="landingView" class="view-panel active-view">
+        
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <div class="hero-content">
+            <div class="kashi-trust-badge">
+              <span>✦ Kashi Astrological Council Certified • 100% Authentic Vedic Math ✦</span>
+            </div>
+
+            <h2 class="hero-heading" id="heroMainHeading">
+              Unlock Your Destiny with Divine Vedic Wisdom
+            </h2>
+
+            <p class="hero-subtext" id="heroSubText">
+              Get precise Janam Kundli analysis, planetary Dasha calculations, and instant answers to your career, marriage, and wealth questions from verified Vedic scholars.
+            </p>
+
+            <!-- PRIMARY CTA CARD (Requested by user: Login with Google + Trial ₹1 right underneath) -->
+            <div class="hero-cta-card">
+              <!-- Google Login Button -->
+              <button class="btn-google-login" id="btnGoogleLoginHero">
+                <svg class="google-icon-svg" viewBox="0 0 24 24">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+                </svg>
+                <span id="googleLoginText">Login with Google</span>
+              </button>
+
+              <!-- Trial ₹1 Offer Box (prominently below Google button) -->
+              <div class="trial-rupee-offer-box" id="trialOfferBox">
+                <div class="trial-offer-badge-pill">🔥 99% OFF</div>
+                <div class="trial-offer-text-details">
+                  <span class="trial-offer-title" id="trialOfferTitle">Trial Consultation at just ₹1</span>
+                  <span class="trial-price-strike">
+                    Normal Price <strike>₹199</strike> &nbsp;|&nbsp; <strong>Pay only ₹1 for 5 Min</strong>
+                  </span>
+                </div>
+                <button class="btn-card-chat" id="btnClaimTrialHero" style="padding: 6px 14px; font-size: 0.8rem;">
+                  <span>Claim ₹1</span>
+                </button>
+              </div>
+
+              <!-- Secondary CTAs -->
+              <div class="hero-secondary-actions">
+                <button class="btn-outline-gold" id="btnHeroFreeKundli">
+                  <span>📜 Free Kundli Generator</span>
+                </button>
+                <button class="btn-outline-gold" id="btnHeroMatchmaking">
+                  <span>💍 36 Gun Milan</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Social trust badges -->
+            <div style="display: flex; gap: 16px; align-items: center; font-size: 0.8rem; color: #94a3b8;">
+              <span>🔒 100% Confidential</span>
+              <span>•</span>
+              <span>⭐ 4.9/5 from 500k+ Seekers</span>
+              <span>•</span>
+              <span>✨ Instant Connect</span>
+            </div>
+          </div>
+
+          <!-- Hero Right Visual -->
+          <div class="hero-visual">
+            <div class="cosmic-mandala-frame">
+              <img src="/assets/cosmic_mandala.jpg" alt="Vedic Cosmic Wheel" class="mandala-img-glow" />
+              
+              <!-- Floating Astrologer Live Badge -->
+              <div class="floating-astrologer-badge" id="floatingGuruBadge">
+                <img src="/assets/acharya_portrait.jpg" alt="Acharya Divyanshu" class="guru-thumb-mini" />
+                <div class="guru-badge-info">
+                  <h4>Acharya Divyanshu</h4>
+                  <p>🟢 Online Now • ₹1 Trial Available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust & Numbers Bar -->
+        <section class="trust-metrics-section">
+          <div class="metrics-bar-grid">
+            <div class="metric-stat-item">
+              <div class="stat-number">500,000+</div>
+              <div class="stat-label">Consultations Done</div>
+            </div>
+            <div class="metric-stat-item">
+              <div class="stat-number">1,200+</div>
+              <div class="stat-label">Verified Astrologers</div>
+            </div>
+            <div class="metric-stat-item">
+              <div class="stat-number">99.4%</div>
+              <div class="stat-label">Vedic Accuracy Rate</div>
+            </div>
+            <div class="metric-stat-item">
+              <div class="stat-number">4.9 ★</div>
+              <div class="stat-label">User Satisfaction</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Daily Panchang & Shubh Muhurat Section -->
+        <section class="section-wrapper" id="panchangSection">
+          <div class="section-header-center">
+            <span class="section-tagline">Vedic Time & Astrology</span>
+            <h3 class="section-main-title">Today's Sacred Vedic Panchang</h3>
+            <p class="section-sub-desc">Calculated in real-time according to classical Surya Siddhanta principles.</p>
+          </div>
+
+          <div class="panchang-card-wrap" id="panchangCardContent">
+            <!-- Dynamic Panchang loaded via JS -->
+          </div>
+        </section>
+
+        <!-- Daily Horoscope (12 Rashis) Section -->
+        <section class="section-wrapper" id="horoscopeSection">
+          <div class="section-header-center">
+            <span class="section-tagline">Daily Destiny Insights</span>
+            <h3 class="section-main-title">Daily Horoscope (दैनिक राशिफल)</h3>
+            <p class="section-sub-desc">Select your Moon sign or Sun sign to see today's planetary transit predictions.</p>
+          </div>
+
+          <!-- Zodiac Signs Nav Tabs -->
+          <div class="horoscope-signs-nav" id="zodiacSignsNav">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Horoscope Result Card -->
+          <div class="horoscope-result-card" id="horoscopeResultBox">
+            <!-- Populated via JS -->
+          </div>
+        </section>
+
+        <!-- Top Verified Astrologers Showcase -->
+        <section class="section-wrapper" id="astrologersSection">
+          <div class="section-header-center">
+            <span class="section-tagline">Certified Vedic Gurus</span>
+            <h3 class="section-main-title">Consult Live Verified Astrologers</h3>
+            <p class="section-sub-desc">Selected through rigorous 4-step Vedic qualification exams from Varanasi and Kashi.</p>
+          </div>
+
+          <div class="astrologers-grid-cards" id="astrologersGridList">
+            <!-- Populated via JS -->
+          </div>
+        </section>
+
+        <!-- Sacred Vedic Remedies Showcase -->
+        <section class="section-wrapper">
+          <div class="section-header-center">
+            <span class="section-tagline">Divine Solutions & Upay</span>
+            <h3 class="section-main-title">Authentic Vedic Remedies & Gemstones</h3>
+            <p class="section-sub-desc">Pure, lab-certified planetary gemstones and authentic Vedic rituals to harmonize celestial energies.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; background: var(--bg-card); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-card);">
+            <div>
+              <img src="/assets/vedic_remedies.jpg" alt="Vedic Gemstones and Diya" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-gold); box-shadow: var(--shadow-gold);" />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <h4 style="font-size: 1.4rem; color: var(--gold-glow);">Custom Astrological Remedies for Obstacle Removal</h4>
+              <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">
+                Every birth chart has benefic (yogakaraka) and malefic planets. Wearing the right gemstone and performing designated Vedic Upay energizes your positive houses and dissolves negative dasha influences.
+              </p>
+              <ul style="color: #94a3b8; font-size: 0.88rem; display: flex; flex-direction: column; gap: 8px; padding-left: 20px;">
+                <li>✦ 100% Natural, untreated Vedic Gemstones with Gov-lab certificates</li>
+                <li>✦ Personalized Vedic Mantra chanting prescriptions</li>
+                <li>✦ Shani Sade Sati and Rahu-Ketu dosha shanti rituals</li>
+              </ul>
+              <button class="btn-grand-chat-now" id="btnAskRemedyHero" style="align-self: flex-start; padding: 12px 24px; font-size: 0.95rem;">
+                <span>Ask Acharya for Remedies (₹1 Trial)</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reviews & Testimonials -->
+        <section class="section-wrapper">
+          <div class="section-header-center">
+            <span class="section-tagline">Seeker Experiences</span>
+            <h3 class="section-main-title">What Seekers Say About AstroVeda</h3>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 22px; border-radius: var(--radius-md);">
+              <div style="color: var(--gold-glow); font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
+              <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+                "I was skeptical about the ₹1 trial, but Acharya Divyanshu's career prediction blew me away. He pinpointed the exact month of my job switch and the yellow sapphire remedy worked wonders!"
+              </p>
+              <strong style="font-size: 0.85rem; color: #fff;">— Rajesh K. (Bengaluru)</strong>
+            </div>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 22px; border-radius: var(--radius-md);">
+              <div style="color: var(--gold-glow); font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
+              <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+                "हिंदी में इतनी सरलता और सटीकता से कुंडली का विश्लेषण पहले कभी नहीं मिला। शादी की बातचीत में जो बाधा आ रही थी, आचार्य जी के उपाय से वह 2 महीने में सुलझ गई।"
+              </p>
+              <strong style="font-size: 0.85rem; color: #fff;">— शालिनी शर्मा (जयपुर)</strong>
+            </div>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 22px; border-radius: var(--radius-md);">
+              <div style="color: var(--gold-glow); font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
+              <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+                "The North Indian Kundli chart rendering and Dasha timeline are so clear. 100% recommended to everyone looking for real Vedic astrology without fake fear-mongering."
+              </p>
+              <strong style="font-size: 0.85rem; color: #fff;">— Vikram Singh (Delhi NCR)</strong>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- ==============================================================
+           VIEW 2: POST-LOGIN MEMBER DASHBOARD (The New Customer Page)
+           ============================================================== -->
+      <section id="dashboardView" class="view-panel" style="display: none;">
+        <div class="dashboard-view-wrapper">
+          
+          <!-- Welcome Hero Banner -->
+          <div class="dashboard-hero-banner">
+            <div class="dash-welcome-text">
+              <div class="dash-trial-status-badge">
+                <span>⚡ ₹1 Trial Offer Active • 1 Consultation Token Ready</span>
+              </div>
+              <h2 id="dashGreetingTitle">Swagatam, Gulshan Ji!</h2>
+              <p id="dashGreetingSub">
+                Your account is verified. You now have immediate access to personalized Vedic Janam Kundli analysis and live interaction with master astrologers.
+              </p>
+            </div>
+
+            <!-- Grand "Chat Now" CTA Card requested by user -->
+            <div class="dash-chat-now-cta-card">
+              <div class="guru-highlight-circle">
+                <img src="/assets/acharya_portrait.jpg" alt="Acharya Divyanshu" />
+                <span class="online-pulse-ring" title="Online Now"></span>
+              </div>
+              <div>
+                <h3>Acharya Divyanshu</h3>
+                <p>Senior Vedic Scholar • Online Now</p>
+              </div>
+              <button class="btn-grand-chat-now" id="btnDashChatNow">
+                <span>✦ Chat Now (चैट करें) ✦</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Sacred Astrology Services -->
+          <div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 18px; color: var(--gold-glow);" id="dashServicesTitle">Sacred Astrology Services</h3>
+            <div class="dash-services-grid">
+              
+              <!-- Service 1: Chat Now Direct -->
+              <div class="service-feature-card" id="cardQuickChat">
+                <div class="service-icon-box">💬</div>
+                <h4>Live Astrologer Chat</h4>
+                <p>Talk directly with verified Vedic masters in Hindi or English about life, career, and love.</p>
+                <div class="service-btn-arrow">Start Consultation &rarr;</div>
+              </div>
+
+              <!-- Service 2: Janam Kundli -->
+              <div class="service-feature-card" id="cardQuickKundli">
+                <div class="service-icon-box">📜</div>
+                <h4>Detailed Janam Kundli</h4>
+                <p>View your 12 houses, Lagna chart, Navamsha (D9), planetary degrees and dasha cycle.</p>
+                <div class="service-btn-arrow">View Kundli Chart &rarr;</div>
+              </div>
+
+              <!-- Service 3: Kundli Milan -->
+              <div class="service-feature-card" id="cardQuickMilan">
+                <div class="service-icon-box">💍</div>
+                <h4>36 Gun Milan (Matchmaking)</h4>
+                <p>Check marriage compatibility, Ashta-koota score, Nadi dosha, and Manglik compatibility.</p>
+                <div class="service-btn-arrow">Match Kundlis &rarr;</div>
+              </div>
+
+              <!-- Service 4: Daily Tarot -->
+              <div class="service-feature-card" id="cardQuickTarot">
+                <div class="service-icon-box">🔮</div>
+                <h4>Cosmic Tarot Reading</h4>
+                <p>Draw 3 mystical cards to receive guidance on your Past, Present, and Divine Path.</p>
+                <div class="service-btn-arrow">Draw Cards &rarr;</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Live Available Astrologers Grid on Dashboard -->
+          <div>
+            <h3 style="font-size: 1.3rem; margin-bottom: 16px; color: #fff;">Online Astrologers Available for Chat</h3>
+            <div class="astrologers-grid-cards" id="dashAstrologersGrid">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           VIEW 3: THE INTERACTIVE CONSULTATION CHAT SCREEN ("Chat Now")
+           ============================================================== -->
+      <section id="chatView" class="view-panel" style="display: none;">
+        <div class="chat-page-container">
+          <div id="astrologerChatMount">
+            <!-- Dynamic Chat Engine Mounted Here -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="brand-logo-wrap">
+          <div class="logo-sacred-emblem">
+            <span>ॐ</span>
+          </div>
+          <div class="brand-text">
+            <h2>AstroVeda</h2>
+            <span>दिव्य वैदिक ज्योतिष</span>
+          </div>
+        </div>
+
+        <div class="footer-trust-marks">
+          <span>🔒 256-Bit SSL Secured</span>
+          <span>•</span>
+          <span>⚡ 100% Confidential</span>
+          <span>•</span>
+          <span>📜 Parashara Vedic Calculation</span>
+          <span>•</span>
+          <span>🇮🇳 Made with Devotion in India</span>
+        </div>
+
+        <p class="footer-copyright" id="footerDisclaimer">
+          © 2026 AstroVeda Platform. Authentic Vedic calculations based on classical Parashara principles. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ==============================================================
+       MODALS
+       ============================================================== -->
+
+  <!-- 1. Google Sign-In Simulation Modal -->
+  <div class="modal-backdrop" id="modalGoogleLogin">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          <span style="font-weight: 700; color: #fff;">Sign in with Google</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal="modalGoogleLogin">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="google-oauth-box">
+          <p style="font-size: 0.88rem; color: #94a3b8;">Choose an account to continue to <strong>AstroVeda</strong> and activate your <strong>₹1 Trial Consultation</strong>:</p>
+
+          <div class="google-auth-accounts-list">
+            <!-- Account 1 -->
+            <div class="google-account-row" data-login-user="Gulshan Yadav" data-login-email="gulshan.yadav@gmail.com">
+              <div class="account-avatar-circ">G</div>
+              <div class="account-info-text">
+                <strong>Gulshan Yadav</strong>
+                <small>gulshan.yadav@gmail.com</small>
+              </div>
+            </div>
+
+            <!-- Account 2 -->
+            <div class="google-account-row" data-login-user="Anand Sharma" data-login-email="anand.sharma@gmail.com">
+              <div class="account-avatar-circ" style="background: #10b981;">A</div>
+              <div class="account-info-text">
+                <strong>Anand Sharma</strong>
+                <small>anand.sharma@gmail.com</small>
+              </div>
+            </div>
+
+            <!-- Custom Account Option -->
+            <div class="google-account-row" id="btnCustomGoogleAccount">
+              <div class="account-avatar-circ" style="background: #8b5cf6;">+</div>
+              <div class="account-info-text">
+                <strong>Use another account</strong>
+                <small>Enter your custom Google email</small>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.74rem; color: #64748b; line-height: 1.5; border-top: 1px solid var(--border-subtle); padding-top: 12px;">
+            To continue, Google will share your name, email address, and language preference with AstroVeda.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. ₹1 Payment Simulation Modal (UPI / Razorpay style) -->
+  <div class="modal-backdrop" id="modalPayment">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span>⚡ Secure ₹1 Trial Checkout</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal="modalPayment">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="payment-checkout-box">
+          <div class="pay-amount-banner">
+            <p>AstroVeda 5-Minute Consultation Trial</p>
+            <h2>₹ 1.00</h2>
+            <p>100% Secure • Money Back Guarantee</p>
+          </div>
+
+          <p style="font-size: 0.85rem; color: #cbd5e1; font-weight: 600;">Select Instant Payment Method:</p>
+          <div class="upi-payment-options">
+            <button class="upi-app-btn" data-pay-method="GPay">
+              <span class="app-icon">🔵</span>
+              <span>Google Pay</span>
+            </button>
+            <button class="upi-app-btn" data-pay-method="PhonePe">
+              <span class="app-icon">🟣</span>
+              <span>PhonePe</span>
+            </button>
+            <button class="upi-app-btn" data-pay-method="Paytm">
+              <span class="app-icon">🔷</span>
+              <span>Paytm / UPI</span>
+            </button>
+          </div>
+
+          <button class="btn-complete-pay" id="btnCompleteRupeePay">
+            Pay ₹1 & Start Chat Now ⚡
+          </button>
+
+          <div style="font-size: 0.72rem; color: #94a3b8; text-align: center;">
+            🔒 256-Bit Bank Grade SSL Encryption • Verified Merchant
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Kundli Milan / Matchmaking Modal -->
+  <div class="modal-backdrop" id="modalMilanCalculator">
+    <div class="modal-dialog" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 id="milanModalTitle">💍 Vedic 36 Gun Milan (कुंडली मिलान)</h3>
+        <button class="modal-close-btn" data-close-modal="modalMilanCalculator">&times;</button>
+      </div>
+      <div class="modal-body" id="milanModalBody">
+        <!-- Content inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript App Entry -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
