@@ -23,7 +23,7 @@ class AstroVedaApp {
         rating: "4.98 ★",
         consultations: "42,000+",
         languages: "Hindi, English, Sanskrit",
-        img: "/assets/acharya_portrait.jpg",
+        img: "./assets/acharya_portrait.jpg",
         status: "Online Now 🟢"
       },
       {
@@ -36,7 +36,7 @@ class AstroVedaApp {
         rating: "4.95 ★",
         consultations: "38,500+",
         languages: "Hindi, Gujrati",
-        img: "/assets/acharya_portrait.jpg",
+        img: "./assets/acharya_portrait.jpg",
         status: "Online Now 🟢"
       },
       {
@@ -49,7 +49,7 @@ class AstroVedaApp {
         rating: "4.96 ★",
         consultations: "29,000+",
         languages: "English, Hindi",
-        img: "/assets/acharya_portrait.jpg",
+        img: "./assets/acharya_portrait.jpg",
         status: "Online Now 🟢"
       },
       {
@@ -62,7 +62,7 @@ class AstroVedaApp {
         rating: "4.92 ★",
         consultations: "31,200+",
         languages: "Hindi, Bengali",
-        img: "/assets/acharya_portrait.jpg",
+        img: "./assets/acharya_portrait.jpg",
         status: "Online Now 🟢"
       }
     ];
