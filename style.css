@@ -102,41 +102,57 @@ p, span, button, input {
 }
 
 /* ==========================================================================
-   Header & Navigation
+   Header: Floating Seamless Capsule Pill + Top Trust Line
    ========================================================================== */
-.site-header {
+.site-header-wrapper {
   position: sticky;
-  top: 0;
+  top: 10px;
   z-index: 100;
-  background: rgba(255, 253, 249, 0.96);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border-gold);
-  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
 }
 
 .trust-ribbon {
-  background: linear-gradient(90deg, #78350f 0%, #b45309 50%, #78350f 100%);
-  color: #fef3c7;
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 6px 16px;
+  max-width: 1100px;
+  width: calc(100% - 24px);
   text-align: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #854D0E;
   letter-spacing: 0.04em;
+  background: transparent;
+  padding: 0;
+  opacity: 0.95;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+}
+
+.site-header {
+  max-width: 1100px;
+  width: calc(100% - 24px);
+  margin: 0 auto;
+  background: rgba(255, 253, 249, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-gold);
+  border-radius: 9999px; /* Floating rounded pill capsule */
+  box-shadow: 0 8px 30px rgba(180, 130, 34, 0.08), 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: var(--transition);
 }
 
 .header-inner {
-  max-width: 1280px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 12px 24px;
+  padding: 8px 18px 8px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  width: 100%;
 }
 
 .brand-logo-wrap {
@@ -541,19 +557,20 @@ p, span, button, input {
    Trust & Metrics Bar
    ========================================================================== */
 .trust-metrics-section {
-  max-width: 1280px;
-  margin: 0 auto 60px;
-  padding: 0 24px;
+  max-width: 1100px;
+  width: calc(100% - 24px);
+  margin: 10px auto 40px;
+  padding: 0;
 }
 
 .metrics-bar-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  background: var(--bg-card);
+  gap: 16px;
+  background: #FFFFFF;
   border: 1px solid var(--border-gold);
-  border-radius: var(--radius-lg);
-  padding: 24px 32px;
+  border-radius: 24px; /* Matching rounded frame */
+  padding: 20px 28px;
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow-card);
 }
@@ -569,19 +586,20 @@ p, span, button, input {
 }
 
 .stat-number {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans) !important;
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--gold-glow);
+  color: #B45309;
   line-height: 1.1;
 }
 
 .stat-label {
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  font-size: 0.76rem;
+  color: #52525B;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-top: 4px;
+  letter-spacing: 0.04em;
+  margin-top: 6px;
 }
 
 /* ==========================================================================
@@ -744,19 +762,21 @@ p, span, button, input {
 }
 
 .horoscope-result-card {
-  background: var(--bg-card);
+  background: #FFFFFF;
   border: 1px solid var(--border-gold);
-  border-radius: var(--radius-lg);
-  padding: 28px;
+  border-radius: 24px; /* Matching rounded frame */
+  padding: 30px;
   box-shadow: var(--shadow-card);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  gap: 28px;
 }
 
 .h-col-title {
-  color: var(--gold-glow);
-  font-size: 1.15rem;
+  font-family: var(--font-sans) !important;
+  color: #B45309 !important;
+  font-size: 1.15rem !important;
+  font-weight: 800 !important;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -764,17 +784,24 @@ p, span, button, input {
 }
 
 .h-text-body {
-  color: #e2e8f0;
-  font-size: 0.95rem;
-  line-height: 1.65;
+  color: #27272A !important; /* Deep rich charcoal, 100% crisp and readable */
+  font-size: 0.96rem !important;
+  line-height: 1.7 !important;
+  font-weight: 500 !important;
 }
 
 .h-lucky-row {
-  margin-top: 14px;
+  margin-top: 16px;
   display: flex;
   gap: 16px;
-  font-size: 0.82rem;
-  color: var(--gold-primary);
+  font-size: 0.84rem;
+  color: #52525B;
+  flex-wrap: wrap;
+}
+
+.h-lucky-row strong {
+  color: #18181B;
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -839,41 +866,54 @@ p, span, button, input {
 }
 
 .astrologer-title-block h4 {
-  font-size: 1.05rem;
-  color: #18181B;
+  font-family: var(--font-sans) !important;
+  font-size: 1.12rem !important;
+  font-weight: 800 !important;
+  color: #18181B !important;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
 }
 
 .astrologer-specialty {
-  font-size: 0.78rem;
-  color: var(--gold-glow);
+  font-size: 0.82rem;
+  color: #B45309;
+  font-weight: 600;
+  margin: 2px 0 4px;
+  display: block;
 }
 
 .astrologer-exp-line {
-  font-size: 0.74rem;
-  color: var(--text-muted);
+  font-size: 0.76rem;
+  color: #71717A;
 }
 
 .rating-star-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  background: rgba(240, 195, 84, 0.15);
-  color: var(--gold-glow);
-  font-size: 0.75rem;
+  background: #FEF3C7;
+  color: #92400E;
+  font-size: 0.74rem;
   font-weight: 700;
   padding: 2px 8px;
-  border-radius: var(--radius-full);
-  margin-top: 4px;
+  border-radius: 9999px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .astrologer-card-details {
   font-size: 0.82rem;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 10px 0;
+  color: #71717A;
+  background: #FAF7F2;
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  border-radius: 12px;
+  padding: 8px 12px;
   display: flex;
   justify-content: space-between;
+}
+
+.astrologer-card-details span strong {
+  color: #18181B;
+  font-weight: 700;
 }
 
 .astrologer-action-row {
@@ -1694,7 +1734,7 @@ p, span, button, input {
 }
 
 .interp-summary {
-  color: #e2e8f0;
+  color: #27272A;
   font-size: 0.92rem;
   line-height: 1.65;
 }
@@ -1775,9 +1815,9 @@ p, span, button, input {
 }
 
 .prompt-chip {
-  background: rgba(255, 255, 255, 0.05);
+  background: #FAF7F2;
   border: 1px solid var(--border-gold);
-  color: #e2e8f0;
+  color: #18181B;
   padding: 6px 12px;
   border-radius: var(--radius-full);
   font-size: 0.8rem;
@@ -2086,19 +2126,26 @@ p, span, button, input {
    Footer
    ========================================================================== */
 .site-footer {
-  background: #04060f;
-  border-top: 1px solid var(--border-gold);
-  padding: 40px 24px 30px;
-  margin-top: auto;
+  max-width: 1100px;
+  width: calc(100% - 24px);
+  margin: 40px auto 24px;
+  background: rgba(255, 253, 249, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-gold);
+  border-radius: 28px; /* Matching rounded floating capsule */
+  padding: 36px 24px 28px;
+  box-shadow: 0 8px 30px rgba(180, 130, 34, 0.08);
+  color: #18181B;
 }
 
 .footer-inner {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   text-align: center;
 }
 
@@ -2106,14 +2153,16 @@ p, span, button, input {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
+  gap: 20px;
+  font-size: 0.84rem;
+  color: #52525B;
+  font-weight: 600;
 }
 
 .footer-copyright {
-  font-size: 0.82rem;
-  color: #64748b;
+  font-size: 0.8rem;
+  color: #71717A;
+  line-height: 1.6;
 }
 
 /* ==========================================================================
@@ -2136,7 +2185,7 @@ p, span, button, input {
   }
   .metrics-bar-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
   .metric-stat-item:nth-child(2) {
     border-right: none;
@@ -2149,31 +2198,82 @@ p, span, button, input {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+  .site-header {
+    border-radius: 20px;
+    width: calc(100% - 16px);
+    margin: 6px auto;
+  }
   .header-inner {
-    padding: 10px 16px;
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .brand-text h1 {
+    font-size: 1.18rem;
+  }
+  .logo-sacred-emblem {
+    width: 36px;
+    height: 36px;
+  }
+  .logo-sacred-emblem span {
+    font-size: 1.15rem;
   }
   .nav-links {
     display: none;
   }
-  .hero-heading {
-    font-size: 2rem;
-  }
   .metrics-bar-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px 14px;
+    gap: 14px;
+    border-radius: 20px;
   }
   .metric-stat-item {
     border-right: none;
-    border-bottom: 1px solid var(--border-subtle);
-    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+    padding: 8px 4px 12px;
   }
-  .concern-grid-selector {
-    grid-template-columns: 1fr;
+  .metric-stat-item:nth-child(3),
+  .metric-stat-item:nth-child(4) {
+    border-bottom: none;
   }
-  .vedic-metrics-grid {
+  .stat-number {
+    font-size: 1.65rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  .hero-heading {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+  .hero-cta-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+  .trial-rupee-offer-box {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    gap: 10px;
+  }
+  .hero-secondary-actions {
     grid-template-columns: 1fr 1fr;
+    gap: 8px;
   }
-  .chat-msg-row {
-    max-width: 95%;
+  .horoscope-result-card {
+    grid-template-columns: 1fr;
+    padding: 20px 18px;
+    border-radius: 20px;
+    gap: 20px;
+  }
+  .astrologers-grid-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .site-footer {
+    border-radius: 20px;
+    width: calc(100% - 16px);
+    padding: 28px 16px 22px;
+    margin: 30px auto 20px;
   }
 }

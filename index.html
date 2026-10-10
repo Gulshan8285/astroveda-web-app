@@ -13,53 +13,60 @@
   <canvas id="starfieldCanvas"></canvas>
 
   <div id="app">
-    <!-- Header -->
-    <header class="site-header">
+    <!-- Floating Header Container with Top Trust Line -->
+    <div class="site-header-wrapper">
       <div class="trust-ribbon" id="trustRibbon">
         <span>⚡ 500,000+ Consultations • 4.9★ Rated • 100% Confidential • Kashi Vedic Certified</span>
       </div>
 
-      <div class="header-inner">
-        <!-- Logo -->
-        <div class="brand-logo-wrap" id="logoBrand">
-          <div class="logo-sacred-emblem">
-            <span>ॐ</span>
+      <header class="site-header">
+        <div class="header-inner">
+          <!-- Logo -->
+          <div class="brand-logo-wrap" id="logoBrand">
+            <div class="logo-sacred-emblem">
+              <span>ॐ</span>
+            </div>
+            <div class="brand-text">
+              <h1 id="brandTitle">AstroVeda</h1>
+              <span id="brandSub">दिव्य वैदिक ज्योतिष</span>
+            </div>
           </div>
-          <div class="brand-text">
-            <h1 id="brandTitle">AstroVeda</h1>
-            <span id="brandSub">दिव्य वैदिक ज्योतिष</span>
-          </div>
-        </div>
 
-        <!-- Navigation Links -->
-        <nav>
-          <ul class="nav-links">
-            <li><a class="nav-link active" data-nav="landing" id="navHome">Home</a></li>
-            <li><a class="nav-link" data-nav="kundli" id="navKundli">Free Kundli</a></li>
-            <li><a class="nav-link" data-nav="matching" id="navMatching">Kundli Milan</a></li>
-            <li><a class="nav-link" data-nav="panchang" id="navPanchang">Panchang</a></li>
-            <li><a class="nav-link" data-nav="astrologers" id="navAstrologers">Verified Gurus</a></li>
-            <li><a class="nav-link" data-nav="horoscope" id="navHoroscope">Daily Horoscope</a></li>
-          </ul>
-        </nav>
+          <!-- Navigation Links -->
+          <nav>
+            <ul class="nav-links">
+              <li><a class="nav-link active" data-nav="landing" id="navHome">Home</a></li>
+              <li><a class="nav-link" data-nav="kundli" id="navKundli">Janam Kundli</a></li>
+              <li><a class="nav-link" data-nav="matching" id="navMatching">Kundli Milan</a></li>
+              <li><a class="nav-link" data-nav="panchang" id="navPanchang">Panchang</a></li>
+              <li><a class="nav-link" data-nav="astrologers" id="navAstrologers">Verified Gurus</a></li>
+              <li><a class="nav-link" data-nav="horoscope" id="navHoroscope">Daily Horoscope</a></li>
+            </ul>
+          </nav>
 
-        <!-- Right Header Actions -->
-        <div class="header-right-actions">
-          <!-- Global Language Switcher -->
-          <button class="global-lang-btn" id="btnToggleLang" title="Change Language / भाषा बदलें">
-            <span id="langFlag">🇮🇳</span>
-            <span id="langLabel">हिंदी / EN</span>
-          </button>
-
-          <!-- Auth Status / Trigger Button -->
-          <div id="authHeaderArea">
-            <button class="btn-outline-gold" id="btnHeaderLogin">
-              <span>Sign In</span>
+          <!-- Right Header Actions -->
+          <div class="header-right-actions">
+            <!-- Global Language Switcher -->
+            <button class="global-lang-btn" id="btnToggleLang" title="Change Language / भाषा बदलें">
+              <span id="langFlag">🇮🇳</span>
+              <span id="langLabel">हिंदी / EN</span>
             </button>
+
+            <!-- Quick ₹1 Chat CTA -->
+            <button class="btn-card-chat" id="btnHeaderChatQuick" style="padding: 6px 14px; font-size: 0.82rem; border-radius: 9999px;">
+              <span>✦ ₹1 Chat</span>
+            </button>
+
+            <!-- Auth Status / Trigger Button -->
+            <div id="authHeaderArea">
+              <button class="btn-outline-gold" id="btnHeaderLogin">
+                <span>Sign In</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
 
     <!-- MAIN VIEWS CONTAINER -->
     <main id="mainContent">
@@ -101,29 +108,29 @@
               <div class="trial-rupee-offer-box" id="trialOfferBox">
                 <div class="trial-offer-badge-pill">🔥 99% OFF</div>
                 <div class="trial-offer-text-details">
-                  <span class="trial-offer-title" id="trialOfferTitle">Trial Consultation at just ₹1</span>
+                  <span class="trial-offer-title" id="trialOfferTitle">1-Day Live Consultation Trial @ ₹1</span>
                   <span class="trial-price-strike">
-                    Normal Price <strike>₹199</strike> &nbsp;|&nbsp; <strong>Pay only ₹1 for 5 Min</strong>
+                    Normal Price <strike>₹199</strike> &nbsp;|&nbsp; <strong style="color: #059669; font-weight: 800;">Pay only ₹1 (1-Day Unlimited Trial)</strong>
                   </span>
                 </div>
-                <button class="btn-card-chat" id="btnClaimTrialHero" style="padding: 6px 14px; font-size: 0.8rem;">
-                  <span>Claim ₹1</span>
+                <button class="btn-card-chat" id="btnClaimTrialHero" style="padding: 8px 16px; font-size: 0.85rem; border-radius: 9999px;">
+                  <span>Claim ₹1 Trial</span>
                 </button>
               </div>
 
               <!-- Secondary CTAs -->
               <div class="hero-secondary-actions">
                 <button class="btn-outline-gold" id="btnHeroFreeKundli">
-                  <span>📜 Free Kundli Generator</span>
+                  <span>✦ Janam Kundli</span>
                 </button>
                 <button class="btn-outline-gold" id="btnHeroMatchmaking">
-                  <span>💍 36 Gun Milan</span>
+                  <span>✦ Kundli Milan</span>
                 </button>
               </div>
             </div>
 
             <!-- Social trust badges -->
-            <div style="display: flex; gap: 16px; align-items: center; font-size: 0.8rem; color: #94a3b8;">
+            <div style="display: flex; gap: 16px; align-items: center; font-size: 0.82rem; color: #52525B; font-weight: 600;">
               <span>🔒 100% Confidential</span>
               <span>•</span>
               <span>⭐ 4.9/5 from 500k+ Seekers</span>
@@ -229,16 +236,16 @@
               <img src="./assets/vedic_remedies.jpg" alt="Vedic Gemstones and Diya" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--border-gold); box-shadow: var(--shadow-gold);" />
             </div>
             <div style="display: flex; flex-direction: column; gap: 16px;">
-              <h4 style="font-size: 1.4rem; color: var(--gold-glow);">Custom Astrological Remedies for Obstacle Removal</h4>
-              <p style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.6;">
+              <h4 style="font-size: 1.4rem; color: #B45309; font-weight: 800; font-family: var(--font-sans);">Custom Astrological Remedies for Obstacle Removal</h4>
+              <p style="color: #27272A; font-size: 0.96rem; line-height: 1.65; font-weight: 500;">
                 Every birth chart has benefic (yogakaraka) and malefic planets. Wearing the right gemstone and performing designated Vedic Upay energizes your positive houses and dissolves negative dasha influences.
               </p>
-              <ul style="color: #94a3b8; font-size: 0.88rem; display: flex; flex-direction: column; gap: 8px; padding-left: 20px;">
+              <ul style="color: #52525B; font-size: 0.88rem; font-weight: 500; display: flex; flex-direction: column; gap: 8px; padding-left: 20px;">
                 <li>✦ 100% Natural, untreated Vedic Gemstones with Gov-lab certificates</li>
                 <li>✦ Personalized Vedic Mantra chanting prescriptions</li>
                 <li>✦ Shani Sade Sati and Rahu-Ketu dosha shanti rituals</li>
               </ul>
-              <button class="btn-grand-chat-now" id="btnAskRemedyHero" style="align-self: flex-start; padding: 12px 24px; font-size: 0.95rem;">
+              <button class="btn-grand-chat-now" id="btnAskRemedyHero" style="align-self: flex-start; padding: 12px 24px; font-size: 0.95rem; border-radius: 9999px;">
                 <span>Ask Acharya for Remedies (₹1 Trial)</span>
               </button>
             </div>
@@ -253,28 +260,28 @@
           </div>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 22px; border-radius: var(--radius-md);">
-              <div style="color: var(--gold-glow); font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
-              <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+              <div style="color: #B45309; font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
+              <p style="color: #27272A; font-size: 0.92rem; line-height: 1.65; font-weight: 500; margin-bottom: 12px;">
                 "I was skeptical about the ₹1 trial, but Acharya Divyanshu's career prediction blew me away. He pinpointed the exact month of my job switch and the yellow sapphire remedy worked wonders!"
               </p>
-              <strong style="font-size: 0.85rem; color: #fff;">— Rajesh K. (Bengaluru)</strong>
+              <strong style="font-size: 0.88rem; color: #18181B; font-weight: 700;">— Rajesh K. (Bengaluru)</strong>
             </div>
 
-            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 22px; border-radius: var(--radius-md);">
-              <div style="color: var(--gold-glow); font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
-              <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+              <div style="color: #B45309; font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
+              <p style="color: #27272A; font-size: 0.92rem; line-height: 1.65; font-weight: 500; margin-bottom: 12px;">
                 "हिंदी में इतनी सरलता और सटीकता से कुंडली का विश्लेषण पहले कभी नहीं मिला। शादी की बातचीत में जो बाधा आ रही थी, आचार्य जी के उपाय से वह 2 महीने में सुलझ गई।"
               </p>
-              <strong style="font-size: 0.85rem; color: #fff;">— शालिनी शर्मा (जयपुर)</strong>
+              <strong style="font-size: 0.88rem; color: #18181B; font-weight: 700;">— शालिनी शर्मा (जयपुर)</strong>
             </div>
 
-            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 22px; border-radius: var(--radius-md);">
-              <div style="color: var(--gold-glow); font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
-              <p style="color: #e2e8f0; font-size: 0.9rem; line-height: 1.6; margin-bottom: 12px;">
+            <div style="background: var(--bg-card); border: 1px solid var(--border-gold); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-card);">
+              <div style="color: #B45309; font-size: 1rem; margin-bottom: 8px;">★★★★★</div>
+              <p style="color: #27272A; font-size: 0.92rem; line-height: 1.65; font-weight: 500; margin-bottom: 12px;">
                 "The North Indian Kundli chart rendering and Dasha timeline are so clear. 100% recommended to everyone looking for real Vedic astrology without fake fear-mongering."
               </p>
-              <strong style="font-size: 0.85rem; color: #fff;">— Vikram Singh (Delhi NCR)</strong>
+              <strong style="font-size: 0.88rem; color: #18181B; font-weight: 700;">— Vikram Singh (Delhi NCR)</strong>
             </div>
           </div>
         </section>
@@ -418,13 +425,13 @@
       <div class="modal-header">
         <div style="display: flex; align-items: center; gap: 8px;">
           <svg width="22" height="22" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
-          <span style="font-weight: 700; color: #fff;">Sign in with Google</span>
+          <span style="font-weight: 700; color: #18181B;">Sign in with Google</span>
         </div>
         <button class="modal-close-btn" data-close-modal="modalGoogleLogin">&times;</button>
       </div>
       <div class="modal-body">
         <div class="google-oauth-box">
-          <p style="font-size: 0.88rem; color: #94a3b8;">Choose an account to continue to <strong>AstroVeda</strong> and activate your <strong>₹1 Trial Consultation</strong>:</p>
+          <p style="font-size: 0.88rem; color: #52525B;">Choose an account to continue to <strong>AstroVeda</strong> and activate your <strong>1-Day Unlimited Trial (@ ₹1)</strong>:</p>
 
           <div class="google-auth-accounts-list">
             <!-- Account 1 -->
@@ -475,12 +482,12 @@
       <div class="modal-body">
         <div class="payment-checkout-box">
           <div class="pay-amount-banner">
-            <p>AstroVeda 5-Minute Consultation Trial</p>
-            <h2>₹ 1.00</h2>
-            <p>100% Secure • Money Back Guarantee</p>
+            <p style="color: #92400E; font-weight: 700;">AstroVeda 1-Day Consultation Unlimited Trial</p>
+            <h2 style="color: #B45309;">₹ 1.00</h2>
+            <p style="color: #059669; font-weight: 700;">100% Secure • Money Back Guarantee</p>
           </div>
 
-          <p style="font-size: 0.85rem; color: #cbd5e1; font-weight: 600;">Select Instant Payment Method:</p>
+          <p style="font-size: 0.88rem; color: #18181B; font-weight: 700;">Select Instant Payment Method:</p>
           <div class="upi-payment-options">
             <button class="upi-app-btn" data-pay-method="GPay">
               <span class="app-icon">🔵</span>
@@ -500,7 +507,7 @@
             Pay ₹1 & Start Chat Now ⚡
           </button>
 
-          <div style="font-size: 0.72rem; color: #94a3b8; text-align: center;">
+          <div style="font-size: 0.74rem; color: #71717A; text-align: center;">
             🔒 256-Bit Bank Grade SSL Encryption • Verified Merchant
           </div>
         </div>
