@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoPay, Subscription & Pricing Policy — AstraVeda AI</title>
+  <meta name="description" content="Official AutoPay, ₹1 Trial, ₹699 Recurring Pricing, and UPI Mandate Cancellation Policy for AstraVeda AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0D0F17;
+      --card-bg: rgba(26, 31, 46, 0.85);
+      --gold: #D4AF37;
+      --gold-light: #F3E5AB;
+      --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+      --green: #22C55E;
+      --text: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --border: rgba(212, 175, 55, 0.25);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      padding: 40px 20px;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 20% 15%, rgba(191, 149, 63, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+    }
+    .brand-header {
+      text-align: center;
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 28px;
+    }
+    .brand-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      color: var(--gold-light);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 30px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .last-updated {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .pricing-card {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 18px;
+      padding: 24px;
+      margin: 24px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) {
+      .pricing-card { grid-template-columns: 1fr; }
+      .container { padding: 24px; }
+      h1 { font-size: 24px; }
+    }
+    .pricing-item {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 18px;
+      border-radius: 14px;
+      border-left: 4px solid var(--gold);
+    }
+    .pricing-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .pricing-value {
+      font-size: 28px;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: 'Cinzel', serif;
+    }
+    .pricing-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 20px;
+      color: var(--gold-light);
+      margin-top: 32px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      color: #D1D5DB;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+    ul, ol {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 12px;
+      color: #D1D5DB;
+      font-size: 15px;
+    }
+    .step-box {
+      background: rgba(34, 197, 94, 0.06);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 16px;
+      padding: 22px;
+      margin: 20px 0;
+    }
+    .step-box h3 {
+      color: #4ADE80;
+      font-size: 17px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .highlight-box {
+      background: rgba(212, 175, 55, 0.08);
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 20px 0;
+      color: var(--gold-light);
+    }
+    .contact-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .footer-nav {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+    }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: var(--gold-light);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="brand-header">
+      <div class="brand-badge">AstraVeda AI • Official Billing Terms</div>
+      <h1>AutoPay, Subscription & Pricing Policy</h1>
+      <p class="last-updated">Last Updated: October 31, 2026</p>
+    </div>
+
+    <p>
+      At <strong>AstraVeda AI</strong>, we believe in 100% transparency regarding our pricing, trial periods, and recurring subscription billing. This policy outlines our ₹1 upfront Special Trial access, monthly AutoPay mandate schedule, and exact step-by-step instructions on how you can cancel or pause your subscription mandate anytime without questions asked.
+    </p>
+
+    <!-- Transparent Pricing Overview -->
+    <div class="pricing-card">
+      <div class="pricing-item">
+        <div class="pricing-label">Day 1: Special Trial Access</div>
+        <div class="pricing-value">₹1.00</div>
+        <div class="pricing-desc">Immediate one-time charge for initial 24-hour trial & mandate setup.</div>
+      </div>
+      <div class="pricing-item">
+        <div class="pricing-label">Day 2 onwards: Monthly AutoPay</div>
+        <div class="pricing-value">₹699.00 / month</div>
+        <div class="pricing-desc">First recurring debit scheduled exactly 24 hours after authorization.</div>
+      </div>
+    </div>
+
+    <h2>1. Subscription & AutoPay Overview</h2>
+    <p>
+      AstraVeda AI offers a subscription-based Vedic astrology service providing unlimited precision Janam Kundli charts, AI Palmistry analysis, planetary transit predictions, and real-time AI Oracle consultations.
+    </p>
+    <ul>
+      <li><strong>Initial Authorization Fee (₹1.00):</strong> When you click "Start Trial - ₹1", an immediate authorization charge of ₹1 is processed to verify your payment method and set up the recurring e-mandate via Razorpay / NPCI.</li>
+      <li><strong>First Recurring Debit (₹699.00):</strong> After the 24-hour trial window expires, your first monthly subscription fee of ₹699 will be debited automatically.</li>
+      <li><strong>Subsequent Billing Cycles:</strong> Billing recurs at ₹699 on a monthly frequency (for up to 12 billing cycles or until cancelled by you).</li>
+      <li><strong>Payment Methods Supported:</strong> UPI AutoPay (Google Pay, PhonePe, Paytm, BHIM UPI), Credit Cards, Debit Cards, and NetBanking e-Mandates.</li>
+    </ul>
+
+    <h2>2. Pre-Debit Notifications</h2>
+    <p>
+      In accordance with Reserve Bank of India (RBI) and NPCI recurring mandate guidelines, you will receive an SMS and/or WhatsApp notification from Razorpay and your issuing bank <strong>at least 24 hours prior</strong> to any recurring auto-debit of ₹699. This ensures you are always informed in advance.
+    </p>
+
+    <h2>3. How to Cancel Your AutoPay Mandate Anytime (3 Easy Methods)</h2>
+    <p>
+      You have complete control over your subscription. You can cancel your AutoPay mandate at any time with zero cancellation penalties:
+    </p>
+
+    <div class="step-box">
+      <h3>Method 1: Cancel Inside the AstraVeda Android App</h3>
+      <ol>
+        <li>Open the <strong>AstraVeda AI</strong> application on your phone.</li>
+        <li>Tap the <strong>Settings (⚙️)</strong> tab in the bottom navigation bar.</li>
+        <li>Scroll down to <strong>"Subscription & AutoPay Terms"</strong>.</li>
+        <li>Tap <strong>"Cancel Subscription & AutoPay Mandate"</strong>.</li>
+        <li>Your subscription will be cancelled immediately and no further charges will occur.</li>
+      </ol>
+    </div>
+
+    <div class="step-box">
+      <h3>Method 2: Cancel Directly Inside Your UPI App (Google Pay / PhonePe / Paytm)</h3>
+      <p style="margin-bottom: 10px;">Since the mandate is registered with your UPI handle, you can cancel it directly from your payment app:</p>
+      <ul style="margin-bottom: 0;">
+        <li><strong>Google Pay:</strong> Tap your Profile picture (top right) &gt; <em>Autopay</em> &gt; Select <em>AstraVeda AI / Razorpay</em> &gt; Tap <strong>Cancel Autopay</strong> &gt; Enter UPI PIN to confirm.</li>
+        <li><strong>PhonePe:</strong> Tap your Profile picture &gt; <em>AutoPay Settings</em> &gt; Select <em>AstraVeda AI / Razorpay</em> &gt; Tap <strong>Remove AutoPay</strong> &gt; Confirm with PIN.</li>
+        <li><strong>Paytm:</strong> Tap Profile (top left) &gt; <em>UPI &amp; Payment Settings</em> &gt; <em>UPI Automatic Payments</em> &gt; Select the active mandate &gt; Tap <strong>Cancel Automatic Payment</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="step-box">
+      <h3>Method 3: Email Our 24/7 Support Desk</h3>
+      <p style="margin-bottom: 0;">
+        Simply send an email to <a href="mailto:gulshanyadav62000@gmail.com"><strong>gulshanyadav62000@gmail.com</strong></a> with your registered phone number or Payment ID. Our support team will cancel your mandate and send confirmation within 24 hours.
+      </p>
+    </div>
+
+    <h2>4. 7-Day Money-Back Guarantee</h2>
+    <p>
+      All subscriptions and renewals are backed by our <strong>7-Day Money-Back Guarantee</strong>. If you are charged and did not intend to continue, or if you face any technical difficulties, you are entitled to a full refund within 7 days of the transaction date. Please see our <a href="refund-policy.html">Refund Policy</a> for complete details.
+    </p>
+
+    <div class="highlight-box">
+      <strong>Important Reminder:</strong> We will never debit your account without prior authorization. You can pause or cancel your AutoPay mandate at any point before the next scheduled billing date.
+    </div>
+
+    <h2>5. Contact & Support Information</h2>
+    <div class="contact-box">
+      <p>For any questions regarding your AutoPay mandate, billing date, or cancellation:</p>
+      <p style="margin-top: 10px; font-size: 16px;">
+        <strong>Support Email:</strong> <a href="mailto:gulshanyadav62000@gmail.com">gulshanyadav62000@gmail.com</a>
+      </p>
+      <p style="font-size: 14px; color: var(--text-muted); margin-top: 6px;">
+        Billing &amp; Merchant Support: Gulshan Yadav • AstraVeda AI • New Delhi, India
+      </p>
+    </div>
+
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="autopay-terms.html">AutoPay &amp; Pricing Terms</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+</body>
+</html>
